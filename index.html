@@ -1,0 +1,1870 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>Shopping_live</title>
+        <style>@import url('https://fonts.googleapis.com/css2?family=Labrada:wght@500&family=Lobster&family=Playfair+Display&family=Raleway:wght@600&family=Roboto+Slab:wght@500&display=swap');
+          *{
+              margin: 0;
+              padding: 0;
+          }
+          body{
+              position: relative;
+          }
+          .products{
+              z-index: 1;
+              margin-top: 20px;
+              margin-left: 10%; ;
+              margin-right: 10%;
+              display: grid;
+              grid-template-columns: 50% 50%;
+              grid-gap: 10px;
+              
+          }
+          @media (max-width: 800px)  {
+              .left{
+              
+                  grid-column-start:1 ;
+                  grid-column-end: 3;
+              }
+              .right{
+                  grid-column-start:1 ;
+                  grid-column-end: 3;
+              }
+              
+          }
+          @media screen and (min-width:801px) {
+              .left{
+              
+                  grid-column-start:1 ;
+                  grid-column-end: 2;
+              }
+              .right{
+                  grid-column-start:2 ;
+                  grid-column-end: 3;
+              }
+          
+          }
+          .advertisement{
+              margin: 0;
+              background-color: #24262b;
+          }
+          .advert{
+              max-width: 70%;
+              background-color: #24262b;
+              overflow: hidden;
+              border-radius: 20px;
+              /* right: 0;
+              margin: 0px; */
+          }
+          .advert img{
+              width: 100%;
+              
+          }
+          
+          .left{
+              
+              /* grid-column-start:1 ;
+              grid-column-end: 2; */
+              background-color: rgb(242, 242, 242);
+              border: black solid 1px;
+              border-radius: 12px;
+              /* display: grid;
+              grid-template-columns: 1fr 1fr 1fr 1fr;
+              grid-template-rows: 1fr 1fr 1fr;
+              width:100% */
+          }
+          /* .showcase{
+              grid-column-start: 2;
+              grid-row-start: 1;
+              grid-column-end: 5;
+              grid-row-end:3 ;
+              background-color: aliceblue;
+          } */
+          .right{
+              /* grid-column-start:2 ;
+              grid-column-end: 3; */
+              border-radius: 12px;
+              background-color:rgb(240, 240, 240);
+              border: black solid 1px;
+              padding: 10px;
+              /* background-image:url("D:\\Webdev\\Programming club task\\pexels-photo-1939485.jpeg"); */
+          }
+          /* .products img{
+              width: 100%;
+          }
+          .images1{
+              grid-column-start: 1;
+              grid-column-end: 2;
+              grid-row-start: 1;
+              grid-row-end: 2;
+              height: 100%;
+          }
+          .images2{
+              height: 100%;
+              grid-column-start: 1;
+              grid-column-end: 2;
+              grid-row-start:2 ;
+              grid-row-end: 3;
+          }
+          .images3{
+              grid-column-start: 1;
+              grid-column-end: 2;
+              grid-row-start:3 ;
+              grid-row-end: 4;
+          }
+          .images4{
+              grid-row-start: 3;
+              grid-row-end: 4;
+              grid-column-start:2 ;
+              grid-row-end: 3;
+          }
+          .images5{
+              grid-row-start: 3;
+              grid-row-end: 4;
+              grid-column-start:3 ;
+              grid-row-end: 4;
+          }.images6{
+              grid-row-start: 3;
+              grid-row-end: 4;
+              grid-column-start:4 ;
+              grid-row-end: 5;
+          } */
+          .comments{
+              grid-column-start: 1;
+              grid-column-end: 3;
+          }
+          .carousel{
+              margin-top: 5%;
+          }
+          .comments .scrollspy-example{
+              border-radius: 7px;
+              border: black solid 1px;
+              padding: 2%;
+          }
+          .images{
+              display: grid;
+              /* margin-top: 10%; */
+              grid-template-columns:20% 20% 20% 20% 20% ;
+              justify-content: space-between;
+              justify-content: center;
+              justify-items: center;
+              background-color: #ffffff;
+          }
+          .images img{
+              width: 100%;
+          }
+          .product-heading{
+              font-family: 'Labrada';
+              color: rgb(39, 35, 35);
+              font-weight: 900;
+              text-align: center;
+              font-size: 70px;
+          }
+          .comments h3{
+              font-family: 'Playfair Display';
+          }
+          
+          .product-rating i{
+              color: rgb(239, 227, 59);
+          }
+          .product-price{
+              font-size: larger;
+              font-weight: 500;
+          }
+          .product-price span{
+              color: rgb(255, 38, 0);
+              font-size: x-large;
+          }
+          .product-detail{
+              color: rgb(39, 35, 35);
+          }
+          .product-detail p{
+              color: black;
+              font-size: large;
+              font-weight: 500;
+          }
+          .product-detail ul{
+              font-size: larger;
+          
+              font-weight: 700;
+          }
+          .product-detail ul span{
+              font-weight: 400;
+          }
+          .purchase-info .button{
+              padding-left: 5px;
+              padding-right: 5px;
+              background-color: rgb(255, 251, 0);
+              border: 2px solid black;
+              border-radius: 4px;
+          }
+          .purchase-info .button1{
+              background-color: rgb(255, 153, 0);
+              border: 2px solid black;
+              border-radius: 4px;
+              padding-left: 5px;
+              padding-right: 5px;
+          }
+          .purchase-info .button :hover{
+              background-color: rgb(245, 245, 245);
+              text-decoration: underline;
+          }
+          .purchase-info .button1 :hover{
+              background-color: rgb(235, 162, 117);
+              text-decoration: underline;
+          }
+          .product-delivery p{
+              font-size: larger;
+              font-weight: 500;
+          }
+          .product-delivery input{
+              border: 0;
+              font-size: large;
+              background-color:rgb(240, 240, 240);
+              border-bottom: 2px solid black;
+              color: black;
+          } 
+          .social-links h6{
+              font-size: 25px;
+          }
+          .social-links{
+              font-size: 50px ;
+          }
+          .social-links div{
+              display: flex;
+              justify-content: space-around;
+          }
+          .sticky {
+              position: fixed;
+              top: 0;
+              width: 100%;
+            }
+            .sticky + .products {
+              padding-top: 60px;
+            }
+            #navbar{
+              overflow: hidden;
+              z-index: 2;
+            }
+          .comments h3{
+              background-color:  rgb(35, 34, 34);margin-bottom: 5px; color: azure;padding:10px;
+              border-radius: 7px;
+              border: black solid 1px;
+          }
+          .scrollspy-example p i{
+              color: rgb(255, 208, 0);
+          }.scrollspy-example p,.scrollspy-example a {
+              color: rgb(70, 69, 69);
+              font-weight: 500;
+          }
+          .scrollspy-example a{
+              font-weight: bolder;
+          }
+          
+          *{
+              box-sizing: border-box;
+            }
+            .container{
+              max-width: 1170px;
+              margin:auto;
+            }
+            .footer-row{
+              display: grid;
+              grid-template-columns:33% 33% 33%;
+              grid-gap: 20px;
+             margin-left: 10%;
+            }
+            /* ul{
+              list-style: none;
+            } */
+            .footer{
+              background-color: #24262b;
+                padding: 20px 0;
+            }
+            .footer-col1{
+               grid-column-start: 1;
+               grid-column-end: 2;
+            }
+          
+            .footer-col2{
+              grid-column-start: 2;
+              grid-column-end: 3;
+           }
+          
+           .footer-col3{
+              grid-column-start: 3;
+              grid-column-end: 4;
+           }
+          
+           .footer-col4{
+              grid-column-start: 1;
+              grid-column-end: 4;
+           }
+          
+            .footer-col h4{
+              font-size: 18px;
+              color: #ffffff;
+              text-transform: capitalize;
+              margin-bottom: 35px;
+              font-weight: 500;
+              position: relative;
+            }
+            .footer-col h4::before{
+              content: '';
+              position: absolute;
+              left:0;
+              bottom: -10px;
+              background-color: #ff9900;
+              height: 2px;
+              box-sizing: border-box;
+              width: 50px;
+            }
+            .footer-col ul li:not(:last-child){
+              margin-bottom: 10px;
+            }
+            .footer-col ul li a{
+              font-size: 16px;
+              text-transform: capitalize;
+              color: #ffffff;
+              text-decoration: none;
+              font-weight: 300;
+              color: #bbbbbb;
+              display: block;
+              transition: all 0.3s ease;
+            }
+            .footer-col ul li a:hover{
+              color: #ffffff;
+              padding-left: 8px;
+            }
+            .footer-col .social-links a{
+              display: inline-block;
+              height: 40px;
+              width: 40px;
+              background-color: rgba(255,255,255,0.2);
+              margin:0 10px 10px 0;
+              text-align: center;
+              line-height: 40px;
+              border-radius: 50%;
+              color: #ffffff;
+              transition: all 0.5s ease;
+            }
+            .footer-col .social-links a:hover{
+              color: #24262b;
+              background-color: #ffffff;
+            }
+          
+            .container h2{
+              color: rgb(255, 115, 0);
+              text-align: center;
+            }
+            .container p{
+              color: #bbbbbb;
+              text-align: center;
+            }
+            
+            .but{
+              background-color: #131212;
+              color: #ff6f00;
+              text-align: center;
+              width: 100%;
+              padding:15px
+            }
+            .but a{
+              color: #ff7700;
+              text-decoration: none;
+            }
+            
+            /*responsive*/
+            @media(max-width: 767px){
+              .footer-col{
+                width: 50%;
+                margin-bottom: 30px;
+            }
+            }
+            @media(max-width: 574px){
+              .footer-col{
+                width: 100%;
+            }
+            }
+          </style>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    </head>
+    <body>
+      <div id="navbar" class="animate__animated animate__fadeInDown animate__delay-1s">
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgb(0, 81, 255);">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">
+                <img src="https://github.com/cse1060/E-commerce-Website/blob/main/Shopping_Live_Logo.png?raw=true" alt="Shopping" width="100px">
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" style="color: rgb(254, 235, 214);">Products</a>
+                  </li>
+                  
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: rgb(241, 234, 226);">
+                      More
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link disabled" href="#" style="color: rgb(241, 234, 226);"  >Contact us</a>
+                  </li>
+                  <li class="nav-item login">
+                    <a class="nav-link" href="#">
+                        <img src="https://github.com/cse1060/E-commerce-Website/blob/main/2000px-User_icon_2.svg.png?raw=true" width="30px">
+                        Log In</a>
+                  </li>
+                  
+                </ul>
+                <form class="d-flex">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+      </div>
+      <carouse class="advertisements" >
+        <div style="background-color: #171e2f;margin: 0;padding: 2%;width: 100%;left: 0;" >
+          <div id="carouselExampleCaptions" class="carousel slide carousel-dark advert" style="margin-left: 15%;" data-bs-ride="false" >
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1" style="background-color: black;"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2" style="background-color: black;"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3" style="background-color: black;"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4" style="background-color: black;"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5" style="background-color: black;"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="https://github.com/cse1060/E-commerce-Website/blob/main/r7.jpeg?raw=true" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <!-- <h5>First slide label</h5>
+                  <p>Some representative placeholder content for the first slide.</p> -->
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="https://github.com/cse1060/E-commerce-Website/blob/main/nike1.jpeg?raw=true" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <!-- <h5>Second slide label</h5>
+                  <p>Some representative placeholder content for the second slide.</p> -->
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="https://github.com/cse1060/E-commerce-Website/blob/main/i2.jpeg?raw=true" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <!-- <h5>Third slide label</h5>
+                  <p>Some representative placeholder content for the third slide.</p> -->
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="https://github.com/cse1060/E-commerce-Website/blob/main/l4.jpg?raw=true" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <!-- <h5>Third slide label</h5>
+                  <p>Some representative placeholder content for the third slide.</p> -->
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="https://github.com/cse1060/E-commerce-Website/blob/main/lv6.jpeg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <!-- <h5>Third slide label</h5>
+                  <p>Some representative placeholder content for the third slide.</p> -->
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+      </div>
+
+
+
+      </carousel>
+          <div class="products">
+            <div class="left animate__animated animate__fadeInUp animate__delay-0s">
+        
+
+            <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="false" >
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1" ></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2" ></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3" ></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4" ></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5" ></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="https://github.com/cse1060/E-commerce-Website/blob/main/r1.jpg?raw=true" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <!-- <h5>First slide label</h5>
+                    <p>Some representative placeholder content for the first slide.</p> -->
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="https://github.com/cse1060/E-commerce-Website/blob/main/nj2.jpg?raw=true" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <!-- <h5>Second slide label</h5>
+                    <p>Some representative placeholder content for the second slide.</p> -->
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="https://github.com/cse1060/E-commerce-Website/blob/main/nj6.jpg?raw=true" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <!-- <h5>Third slide label</h5>
+                    <p>Some representative placeholder content for the third slide.</p> -->
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="https://github.com/cse1060/E-commerce-Website/blob/main/nj4.jpg?raw=true" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <!-- <h5>Third slide label</h5>
+                    <p>Some representative placeholder content for the third slide.</p> -->
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="https://github.com/cse1060/E-commerce-Website/blob/main/nj5.jpg?raw=true" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <!-- <h5>Third slide label</h5>
+                    <p>Some representative placeholder content for the third slide.</p> -->
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+            <hr>
+
+            <div class="images">
+            <div class="images1">
+              <img src="https://github.com/cse1060/E-commerce-Website/blob/main/r1.jpg?raw=true">
+            </div>
+            <div class="images2">
+              <img src="https://github.com/cse1060/E-commerce-Website/blob/main/r2.jpg?raw=true">
+            </div>
+            <div class="images3">
+             <img src="https://github.com/cse1060/E-commerce-Website/blob/main/r3.jpg?raw=true">
+            </div>
+            <div class="images4">
+              <img src="https://github.com/cse1060/E-commerce-Website/blob/main/r4.jpg?raw=trueg">
+            </div>
+            <div class="images5">
+              <img src="https://github.com/cse1060/E-commerce-Website/blob/main/r5.jpeg?raw=true">
+            </div>
+            <!-- <div class="images6">
+              <img src="https://rukminim1.flixcart.com/image/128/128/xif0q/shoe/e/3/o/8-dc3728-003nike-9-nike-black-white-iron-grey-original-imag8mz3nmvgmhdd-bb.jpeg?q=70">
+            </div> -->
+            
+            
+
+            </div>
+
+          </div>
+          <div class="right animate__animated animate__fadeInUp animate__delay-0s">
+            <div class="product-content">
+            <h2 class="product-heading animate__animated animate__fadeInUp animate__delay-1s ">GUESS WATCH
+            </h2>
+            <hr>
+            <div class="product-rating animate__animated animate__fadeInUp animate__delay-1s">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half alt"></i>
+              <span><b>4.5(35)</b></span>
+            </div>
+            <div class="product-price animate__animated animate__fadeInUp animate__delay-1s" >
+              <p class="last price">Old Price: <span><b>₹36,695.00</b></span></p>
+              <p class="new price">new Price: <span><b>₹32,999.00</b></span></p>
+            </div>
+            <div class="product-detail animate__animated animate__fadeInUp animate__delay-1s">
+              <h3>About this item: </h3>
+              <p>GUESS Men's 48MM Crystal Embellished Analog Watch<br>
+                Best Quality watch for parties and ethnic wear<br>
+              </p>
+              <ul class="animate__animated animate__fadeInUp animate__delay-1s">
+                <li>Color: <span>Golden</span></li>
+                <li>Available: <span>In stock</span></li>
+                <li>Category: <span>Luxuty Watch</span></li>
+                <li>Shipping Available: <span>All over the India</span></li>
+                <li>Shipping fee: <span>Free</span></li>
+                <li><span>Extraordinary presence and style for dress to casual looks</span></li>
+                <li><span>Quartz movement</span></li>
+                <li><span>Case diameter: 46.0mm</span></li>
+                <li><span>Not water resistant multi-functions include: day, date and 24 international times; perfect for women too</span></li>
+              </ul>
+            </div>
+            <div class="purchase-info animate__animated animate__fadeInUp animate__delay-1s">
+              <input type="number" min="0" value="1">
+              <button type="button" class="button">
+                 <i class="fa fa-shopping-cart">Add To Cart</i>
+              </button>
+              <!-- <p style="margin-top: 5px;"> <input type="number" value="6" min="3" max="15"> Select the Size (in UK/Ind)</p> -->
+              <button type="button" class="button1">
+                <span>Buy Now</span>
+              </button>
+            </div>
+            <hr>
+            <div class="product-delivery animate__animated animate__fadeInUp animate__delay-1s">
+              <p>Set Delivery location:<br><i class="fa fa-map-marker"></i>  <input type="text" class="pincode" value="Pin-code"><p>
+            </div>
+            <hr>
+            <div class="social-links animate__animated animate__fadeInUp animate__delay-1s">
+              <h6>Share  At:</h6>
+              <div>
+              <a href="#">
+                <i class="fa fa-twitter animate__animated animate__flip animate__delay-1s  animate__slower 5s animate__infinite"></i>
+              </a>
+              <a href="#">
+                <i class="fa fa-facebook animate__animated animate__flip animate__delay-1s  animate__slower 5s animate__infinite"></i>
+              </a>
+              <a href="#">
+                <i class="fa fa-instagram animate__animated animate__flip animate__delay-1s  animate__slower 5s animate__infinite"></i>
+              </a>
+              <a href="#">
+                <i class="fa fa-skype animate__animated animate__flip animate__delay-1s  animate__slower 5s animate__infinite"></i>
+              </a>
+              <a href="#">
+                <i class="fa fa-whatsapp animate__animated animate__flip animate__delay-1s  animate__slower 5s animate__infinite"></i>
+              </a>
+              </div>
+            </div>
+          </div>
+          </div>
+          <div class="comments comments1">
+            <h3 >Ratings and experiences</h3>
+            <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0" style="height: 300px; overflow-y: scroll;   background-color:rgb(240, 240, 240); ;" >
+              <h4 id="scrollspyHeading11"><i class="fa fa-user-circle"></i><b>BINOD</b></h4>
+
+              <p><i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half alt"></i>
+                <br>
+                BINOD!!!
+                <br>
+                15 people found this helpful
+                <br>
+                <a href="#">Report abuse</a>
+          
+              </p>
+              <hr>
+              <h4 id="scrollspyHeading2"><i class="fa fa-user-circle"></i> Ankita</h4>
+              <p><i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-empty alt"></i>
+                <br>
+                It’s absolutely beautiful, my boyfriend loves it. It looks sexy and expensive!! Best buy!😊
+                <br>
+                10 people found this helpful
+                <br>
+                <a href="#">Report abuse</a>
+          
+              </p>
+              <hr>
+              <h4 id="scrollspyHeading3"><i class="fa fa-user-circle"></i>Mihir sen</h4>
+              <p><i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <br>
+                Very very great products
+                <br>
+                25 people found this helpful
+                <br>
+                <a href="#">Report abuse</a>
+          
+              </p>
+              <hr>
+              <h4 id="scrollspyHeading4"><i class="fa fa-user-circle"></i>Pranjal Sinha</h4>
+              <p><i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-empty alt"></i>
+                <br>
+                It’s absolutely beautiful, my boyfriend loves it. It looks sexy and expensive!! Best buy!😊
+                <br>
+                25 people found this helpful
+                <br>
+                <a href="#">Report abuse</a>
+          
+              </p>
+              <hr>
+              <h4 id="scrollspyHeading5"><i class="fa fa-user-circle">Manas Khatri</i></h4>
+              <!-- <p><i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-empty alt"></i> -->
+                <br>
+                <p><i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star-empty alt"></i>
+                  <br>
+                  Watch is gud but dial is very big. Bling is also nice. Eye catching. Got for 23000 in lightning deal
+                  <br>
+                  15 people found this helpful
+                  <br>
+                  <a href="#">Report abuse</a>
+            
+                </p>
+              <hr>
+              <a href="#scrollspyHeading11">More Reviews</a>
+            </div>
+          </div>
+          </div>
+          <br>
+          <hr>
+          <br>
+
+          <!-- Product 2****************************************************************** -->
+          <div class="products">
+            <div class="left animate__animated animate__fadeInUp animate__delay-0s">
+        
+
+            <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="false" >
+              <div class="carousel-indicators">
+                <!-- <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1" style="background-color: black;" ></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2" style="background-color: black;" ></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3" style="background-color: black;" ></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4" style="background-color: black;" ></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5" style="background-color: black;" ></button> -->
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="https://github.com/cse1060/E-commerce-Website/blob/main/i2.jpeg?raw=true" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <!-- <h5>First slide label</h5>
+                    <p>Some representative placeholder content for the first slide.</p> -->
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="https://github.com/cse1060/E-commerce-Website/blob/main/nj2.jpg?raw=true" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <!-- <h5>Second slide label</h5>
+                    <p>Some representative placeholder content for the second slide.</p> -->
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="https://github.com/cse1060/E-commerce-Website/blob/main/nj6.jpg?raw=true" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <!-- <h5>Third slide label</h5>
+                    <p>Some representative placeholder content for the third slide.</p> -->
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="https://github.com/cse1060/E-commerce-Website/blob/main/nj4.jpg?raw=true" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <!-- <h5>Third slide label</h5>
+                    <p>Some representative placeholder content for the third slide.</p> -->
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="https://github.com/cse1060/E-commerce-Website/blob/main/nj5.jpg?raw=true" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <!-- <h5>Third slide label</h5>
+                    <p>Some representative placeholder content for the third slide.</p> -->
+                  </div>
+                </div>
+              </div>
+              <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button> -->
+            </div>
+            <hr>
+
+            <div class="images">
+            <div class="images1">
+              <img src="https://github.com/cse1060/E-commerce-Website/blob/main/i2.jpeg?raw=true">
+            </div>
+            <div class="images2">
+              <img src="https://github.com/cse1060/E-commerce-Website/blob/main/i1.webp?raw=true">
+            </div>
+            <div class="images3">
+             <img src="https://github.com/cse1060/E-commerce-Website/blob/main/i7.jpg?raw=true">
+            </div>
+            <div class="images4">
+              <img src="https://github.com/cse1060/E-commerce-Website/blob/main/i3.jpeg?raw=true">
+            </div>
+            <div class="images5">
+              <img src="https://github.com/cse1060/E-commerce-Website/blob/main/i6.jpg?raw=true">
+            </div>
+            <!-- <div class="images6">
+              <img src="https://rukminim1.flixcart.com/image/128/128/xif0q/shoe/e/3/o/8-dc3728-003nike-9-nike-black-white-iron-grey-original-imag8mz3nmvgmhdd-bb.jpeg?q=70">
+            </div> -->
+            
+            
+
+            </div>
+
+          </div>
+          <div class="right animate__animated animate__fadeInUp animate__delay-0s">
+            <div class="product-content">
+            <h2 class="product-heading animate__animated animate__fadeInUp animate__delay-1s ">I PHONE 14 PRO MAX
+            </h2>
+            <hr>
+            <div class="product-rating animate__animated animate__fadeInUp animate__delay-1s">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <span><b>5.0(1500)</b></span>
+            </div>
+            <div class="product-price animate__animated animate__fadeInUp animate__delay-1s" >
+              <p class="last price">Old Price: <span><b>₹2,00,000</b></span></p>
+              <p class="new price">new Price: <span><b>₹1,80,000</b></span></p>
+            </div>
+            <div class="product-detail animate__animated animate__fadeInUp animate__delay-1s">
+              <h3>About this item: </h3>
+              <p>Apple iPhone 14 Pro Max 128GB Deep Purple<br>
+                Best Quality phone for heavy tasks<br>
+              </p>
+              <ul class="animate__animated animate__fadeInUp animate__delay-1s">
+                <li>Color: <span>Purple</span></li>
+                <li>Available: <span>In stock</span></li>
+                <li>Category: <span>Smart phone</span></li>
+                <li>Shipping Available: <span>All over the India</span></li>
+                <li>Shipping fee: <span>Free</span></li>
+                <li><span>17.00 cm (6.7-inch) Super Retina XDR display featuring Always-On and ProMotion</span></li>
+                <li><span>Dynamic Island, a magical new way to interact with iPhone</span></li>
+                <li><span>48MP Main camera for up to 4x greater resolution</span></li>
+                <li><span>Cinematic mode now in 4K Dolby Vision up to 30 fps
+                  Action mode for smooth, steady, handheld videos</span></li>
+              </ul>
+            </div>
+            <div class="purchase-info animate__animated animate__fadeInUp animate__delay-1s">
+              <input type="number" min="0" value="1">
+              <button type="button" class="button">
+                 <i class="fa fa-shopping-cart">Add To Cart</i>
+              </button>
+              <!-- <p style="margin-top: 5px;"> <input type=""> Select the Size (in UK/Ind)</p> -->
+              <button type="button" class="button1">
+                <span>Buy Now</span>
+              </button>
+            </div>
+            <hr>
+            <div class="product-delivery animate__animated animate__fadeInUp animate__delay-1s">
+              <p>Set Delivery location:<br><i class="fa fa-map-marker"></i>  <input type="text" class="pincode" value="Pin-code"><p>
+            </div>
+            <hr>
+            <div class="social-links animate__animated animate__fadeInUp animate__delay-1s">
+              <h6>Share  At:</h6>
+              <div>
+              <a href="#">
+                <i class="fa fa-twitter animate__animated animate__flip animate__delay-1s  animate__slower 5s animate__infinite"></i>
+              </a>
+              <a href="#">
+                <i class="fa fa-facebook animate__animated animate__flip animate__delay-1s  animate__slower 5s animate__infinite"></i>
+              </a>
+              <a href="#">
+                <i class="fa fa-instagram animate__animated animate__flip animate__delay-1s  animate__slower 5s animate__infinite"></i>
+              </a>
+              <a href="#">
+                <i class="fa fa-skype animate__animated animate__flip animate__delay-1s  animate__slower 5s animate__infinite"></i>
+              </a>
+              <a href="#">
+                <i class="fa fa-whatsapp animate__animated animate__flip animate__delay-1s  animate__slower 5s animate__infinite"></i>
+              </a>
+              </div>
+            </div>
+          </div>
+          </div>
+          <div class="comments comments1">
+            <h3 >Ratings and experiences</h3>
+            <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0" style="height: 300px; overflow-y: scroll;   background-color:rgb(240, 240, 240); ;" >
+              <h4 id="scrollspyHeading12"><i class="fa fa-user-circle"></i> Agrim</h4>
+
+              <p><i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <br>
+               Greatest phone ever<br>
+               Baap ne dila hi diya
+                <br>
+                15 people found this helpful
+                <br>
+                <a href="#">Report abuse</a>
+          
+              </p>
+              <hr>
+              <h4 id="scrollspyHeading2"><i class="fa fa-user-circle"></i> Kajol</h4>
+              <p><i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-empty alt"></i>
+                <br>
+                I love love love the I-phone!! I’m just so sad my son can’t get them! Unfortunately I’ll have to return them. These phone are the real deal!! This seller is top tier with selling original and authentic shoes. It came in its original box and packaging as if I went and purchased them from my local retailer store for them! Love them will be buying again in correct size!
+                <br>
+                10 people found this helpful
+                <br>
+                <a href="#">Report abuse</a>
+          
+              </p>
+              <hr>
+              <h4 id="scrollspyHeading3"><i class="fa fa-user-circle"></i>Kiara</h4>
+              <p><i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <br>
+                maza aa gaya . Best phone I ever bought.
+                <br>
+                25 people found this helpful
+                <br>
+                <a href="#">Report abuse</a>
+          
+              </p>
+              <hr>
+              <h4 id="scrollspyHeading4"><i class="fa fa-user-circle"></i>Pranjal Sinha</h4>
+              <p><i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-empty alt"></i>
+                <br>
+               Rose Gold colour is true love.
+                <br>
+                25 people found this helpful
+                <br>
+                <a href="#">Report abuse</a>
+          
+              </p>
+              <hr>
+              <h4 id="scrollspyHeading5"><i class="fa fa-user-circle">Ishita kumari</i></h4>
+              <p><i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-empty alt"></i>
+                <br>
+                <p>Apple hasn’t made any bones about the fact that there are certain products it has that aren’t meant for everyone. Some of these — like the Mac Studio or even the Mac mini — are way too niche and will be sought by those who really need them. And then there are those that bring the best of Apple at an expensive — very expensive — price point but are desired by many. The iPhone’s Pro models have always been in the category — the coveted one, the desirable one, the one that makes you want to junk that financial prudence that has been drilled in you. The iPhone 14 Pro Max is very much that phone — the best of Apple and by now you know that it is an expensive phone. Rs 1,39,900 is the starting price and there’s little point in debating on why it’s so expensive and whether it’s value for money or not. It’s an Apple product, it is an iPhone, and it is the Pro Max variant — of course it will be expensive. Apple wants your money and the iPhone 14 Pro Max is that dangling proposition that may just want you to break the bank and get one.
+                  <br>
+                 
+                  <br>
+                  15 people found this helpful
+                  <br>
+                  <a href="#">Report abuse</a>
+            
+                </p>
+              <hr>
+              <a href="#scrollspyHeading12">More Reviews</a>
+            </div>
+          </div>
+          </div>
+          <br>
+          <hr>
+          <br>
+
+
+          <div class="products">
+            <div class="left animate__animated animate__fadeInUp animate__delay-0s">
+        
+
+            <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="false" >
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1" ></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2" ></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3" ></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4" ></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5" ></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="https://github.com/cse1060/E-commerce-Website/blob/main/nj1.jpg?raw=true" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <!-- <h5>First slide label</h5>
+                    <p>Some representative placeholder content for the first slide.</p> -->
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="https://github.com/cse1060/E-commerce-Website/blob/main/nj2.jpg?raw=true" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <!-- <h5>Second slide label</h5>
+                    <p>Some representative placeholder content for the second slide.</p> -->
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="https://github.com/cse1060/E-commerce-Website/blob/main/nj6.jpg?raw=true" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <!-- <h5>Third slide label</h5>
+                    <p>Some representative placeholder content for the third slide.</p> -->
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="https://github.com/cse1060/E-commerce-Website/blob/main/nj4.jpg?raw=true" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <!-- <h5>Third slide label</h5>
+                    <p>Some representative placeholder content for the third slide.</p> -->
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="https://github.com/cse1060/E-commerce-Website/blob/main/nj5.jpg?raw=true" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <!-- <h5>Third slide label</h5>
+                    <p>Some representative placeholder content for the third slide.</p> -->
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+            <hr>
+
+            <div class="images">
+            <div class="images1">
+              <img src="https://m.media-amazon.com/images/I/61OzUni8t2L._UY575_.jpg">
+            </div>
+            <div class="images2">
+              <img src="https://github.com/cse1060/E-commerce-Website/blob/main/nj2.jpg?raw=true">
+            </div>
+            <div class="images3">
+             <img src="https://github.com/cse1060/E-commerce-Website/blob/main/nj6.jpg?raw=true">
+            </div>
+            <div class="images4">
+              <img src="https://github.com/cse1060/E-commerce-Website/blob/main/nj4.jpg?raw=true">
+            </div>
+            <div class="images5">
+              <img src="https://github.com/cse1060/E-commerce-Website/blob/main/nj5.jpg?raw=true">
+            </div>
+            <!-- <div class="images6">
+              <img src="https://rukminim1.flixcart.com/image/128/128/xif0q/shoe/e/3/o/8-dc3728-003nike-9-nike-black-white-iron-grey-original-imag8mz3nmvgmhdd-bb.jpeg?q=70">
+            </div> -->
+            
+            
+
+            </div>
+
+          </div>
+          <div class="right animate__animated animate__fadeInUp animate__delay-0s">
+            <div class="product-content">
+            <h2 class="product-heading animate__animated animate__fadeInUp animate__delay-1s ">NIKE SHOES
+            </h2>
+            <hr>
+            <div class="product-rating animate__animated animate__fadeInUp animate__delay-1s">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half alt"></i>
+              <span><b>4.5(35)</b></span>
+            </div>
+            <div class="product-price animate__animated animate__fadeInUp animate__delay-1s" >
+              <p class="last price">Old Price: <span><b>₹3,695.00</b></span></p>
+              <p class="new price">new Price: <span><b>₹2,586.00</b></span></p>
+            </div>
+            <div class="product-detail animate__animated animate__fadeInUp animate__delay-1s">
+              <h3>About this item: </h3>
+              <p>Nike Jordan Stay Loyal 2 Mens Shoes (Numeric_8)  (Black)<br>
+                Best Quality shoes for running and daily wear<br>
+              </p>
+              <ul class="animate__animated animate__fadeInUp animate__delay-1s">
+                <li>Color: <span>Black</span></li>
+                <li>Available: <span>In stock</span></li>
+                <li>Category: <span>Shoes</span></li>
+                <li>Shipping Available: <span>All over the India</span></li>
+                <li>Shipping fee: <span>Free</span></li>
+                <li><span>The rest of the design deviates from the “Black Toe’s” color block</span></li>
+                <li><span>A yellow leather Swoosh appears on both sides and a yellow “Wings” logo graces the black leather overlay on the collar</span></li>
+                <li><span>The shoe’s Flywire cables and TPU “wings” provide the wearer with a lockdown fit that inspires confidence when making hard cuts and starts and stops on the basketball court</span></li>
+                <li><span>The Air Jordan 1 Mid GS “Pollen/White/Black” is a youth-sized version of Michael Jordan’s first signature shoe in clean, ultra-wearable color scheme</span></li>
+              </ul>
+            </div>
+            <div class="purchase-info animate__animated animate__fadeInUp animate__delay-1s">
+              <input type="number" min="0" value="1">
+              <button type="button" class="button">
+                 <i class="fa fa-shopping-cart">Add To Cart</i>
+              </button>
+              <p style="margin-top: 5px;"> <input type="number" value="6" min="3" max="15"> Select the Size (in UK/Ind)</p>
+              <button type="button" class="button1">
+                <span>Buy Now</span>
+              </button>
+            </div>
+            <hr>
+            <div class="product-delivery animate__animated animate__fadeInUp animate__delay-1s">
+              <p>Set Delivery location:<br><i class="fa fa-map-marker"></i>  <input type="text" class="pincode" value="Pin-code"><p>
+            </div>
+            <hr>
+            <div class="social-links animate__animated animate__fadeInUp animate__delay-1s">
+              <h6>Share  At:</h6>
+              <div>
+              <a href="#">
+                <i class="fa fa-twitter animate__animated animate__flip animate__delay-1s  animate__slower 5s animate__infinite"></i>
+              </a>
+              <a href="#">
+                <i class="fa fa-facebook animate__animated animate__flip animate__delay-1s  animate__slower 5s animate__infinite"></i>
+              </a>
+              <a href="#">
+                <i class="fa fa-instagram animate__animated animate__flip animate__delay-1s  animate__slower 5s animate__infinite"></i>
+              </a>
+              <a href="#">
+                <i class="fa fa-skype animate__animated animate__flip animate__delay-1s  animate__slower 5s animate__infinite"></i>
+              </a>
+              <a href="#">
+                <i class="fa fa-whatsapp animate__animated animate__flip animate__delay-1s  animate__slower 5s animate__infinite"></i>
+              </a>
+              </div>
+            </div>
+          </div>
+          </div>
+          <div class="comments comments1">
+            <h3 >Ratings and experiences</h3>
+            <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0" style="height: 300px; overflow-y: scroll;   background-color:rgb(240, 240, 240); ;" >
+              <h4 id="scrollspyHeading13"><i class="fa fa-user-circle"></i> tiziano</h4>
+
+              <p><i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half alt"></i>
+                <br>
+                The product is good and it is very nice, however the size is very small and it turns out that there are no larger sizes. The surprise was in the return they made me pay for a Guide worth more than $1,000 pesos, which had never happened to me with Amazon.
+That part was never mentioned, I paid 24% of the value of the sneakers and it doesn't work out just because it's too much, in addition to the time it will take for them to be reimbursed. I hope you can do something about it
+                <br>
+                15 people found this helpful
+                <br>
+                <a href="#">Report abuse</a>
+          
+              </p>
+              <hr>
+              <h4 id="scrollspyHeading2"><i class="fa fa-user-circle"></i> Deepika</h4>
+              <p><i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-empty alt"></i>
+                <br>
+                I love love love the air Jordans!! I’m just so sad my son can’t fit them! Unfortunately I’ll have to return them. These shoes are the real deal!! This seller is top tier with selling original and authentic shoes. It came in its original box and packaging as if I went and purchased them from my local retailer store for them! Love them will be buying again in correct size!
+                <br>
+                10 people found this helpful
+                <br>
+                <a href="#">Report abuse</a>
+          
+              </p>
+              <hr>
+              <h4 id="scrollspyHeading3"><i class="fa fa-user-circle"></i>Sarthak</h4>
+              <p><i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <br>
+                My sneakers were not going to make it on time and I was going out out town. I contacted the seller and they were able to get my sneakers to me on time. The fit was perfect and the sneakers were comfortable. I walked in them all day. Thank you for great customer service.
+                <br>
+                25 people found this helpful
+                <br>
+                <a href="#">Report abuse</a>
+          
+              </p>
+              <hr>
+              <h4 id="scrollspyHeading4"><i class="fa fa-user-circle"></i>Pranjal Sinha</h4>
+              <p><i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-empty alt"></i>
+                <br>
+                Was labeled at womens shoe size 6. I got a youth boys size 6 in the mail. Everything said womens and the right size I needed got it in the mail and it was a BOYS YOUTH 6…
+                <br>
+                25 people found this helpful
+                <br>
+                <a href="#">Report abuse</a>
+          
+              </p>
+              <hr>
+              <h4 id="scrollspyHeading5"><i class="fa fa-user-circle">Ishita kumari</i></h4>
+              <p><i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-empty alt"></i>
+                <br>
+                <p><i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star-empty alt"></i>
+                  <br>
+                  Was labeled at womens shoe size 6. I got a youth boys size 6 in the mail. Everything said womens and the right size I needed got it in the mail and it was a BOYS YOUTH 6…
+                  <br>
+                  15 people found this helpful
+                  <br>
+                  <a href="#">Report abuse</a>
+            
+                </p>
+              <hr>
+              <a href="#scrollspyHeading13">More Reviews</a>
+            </div>
+          </div>
+          </div>
+          <br>
+          <hr>
+          <br>
+
+
+
+          <!-- product4*************************************************************************************** -->
+
+
+          <div class="products">
+            <div class="left animate__animated animate__fadeInUp animate__delay-0s">
+        
+
+            <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="false" >
+              <div class="carousel-indicators">
+                <!-- <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1" ></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2" ></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3" ></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4" ></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5" ></button> -->
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="https://github.com/cse1060/E-commerce-Website/blob/main/l4.jpg?raw=true" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <!-- <h5>First slide label</h5>
+                    <p>Some representative placeholder content for the first slide.</p> -->
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="https://github.com/cse1060/E-commerce-Website/blob/main/nj2.jpg?raw=true" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <!-- <h5>Second slide label</h5>
+                    <p>Some representative placeholder content for the second slide.</p> -->
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="https://github.com/cse1060/E-commerce-Website/blob/main/nj6.jpg?raw=true" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <!-- <h5>Third slide label</h5>
+                    <p>Some representative placeholder content for the third slide.</p> -->
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="https://github.com/cse1060/E-commerce-Website/blob/main/nj4.jpg?raw=true" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <!-- <h5>Third slide label</h5>
+                    <p>Some representative placeholder content for the third slide.</p> -->
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="https://github.com/cse1060/E-commerce-Website/blob/main/nj5.jpg?raw=true" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <!-- <h5>Third slide label</h5>
+                    <p>Some representative placeholder content for the third slide.</p> -->
+                  </div>
+                </div>
+              </div>
+              <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button> -->
+            </div>
+            <hr>
+
+            <div class="images">
+            <div class="images1">
+              <img src="https://github.com/cse1060/E-commerce-Website/blob/main/l1.jpg?raw=true">
+            </div>
+            <div class="images2">
+              <img src="https://github.com/cse1060/E-commerce-Website/blob/main/i2.jpeg?raw=true">
+            </div>
+            <div class="images3">
+             <img src="https://github.com/cse1060/E-commerce-Website/blob/main/l3.jpg?raw=true">
+            </div>
+            <div class="images4">
+              <img src="https://github.com/cse1060/E-commerce-Website/blob/main/l4.jpg?raw=true">
+            </div>
+            <div class="images5">
+              <img src="https://github.com/cse1060/E-commerce-Website/blob/main/l5.jpg?raw=true">
+            </div>
+            <!-- <div class="images6">
+              <img src="https://rukminim1.flixcart.com/image/128/128/xif0q/shoe/e/3/o/8-dc3728-003nike-9-nike-black-white-iron-grey-original-imag8mz3nmvgmhdd-bb.jpeg?q=70">
+            </div> -->
+            
+            
+
+            </div>
+
+          </div>
+          <div class="right animate__animated animate__fadeInUp animate__delay-0s">
+            <div class="product-content">
+            <h2 class="product-heading animate__animated animate__fadeInUp animate__delay-1s ">GAMING LAPTOP
+            </h2>
+            <hr>
+            <div class="product-rating animate__animated animate__fadeInUp animate__delay-1s">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half alt"></i>
+              <span><b>4.9(350)</b></span>
+            </div>
+            <div class="product-price animate__animated animate__fadeInUp animate__delay-1s" >
+              <p class="last price">Old Price: <span><b>₹1,82,000.00</b></span></p>
+              <p class="new price">new Price: <span><b>₹1,45,999.00</b></span></p>
+            </div>
+            <div class="product-detail animate__animated animate__fadeInUp animate__delay-1s">
+              <h3>About this item: </h3>
+              <p>ASUS TUF Gaming F15 (2022), 15.6"(39.62 cms) FHD 300Hz, Intel Core i7-12700H 12th Gen, RTX 3060 6GB Graphics, Gaming Laptop (16GB/1TB SSD/90WHr Battery/Win 11/Office 2021/Gray/2.2 Kg) FX507ZM-HF068WS
+              </p>
+              <ul class="animate__animated animate__fadeInUp animate__delay-1s">
+                <li>Color: <span>Black</span></li>
+                <li>Available: <span>In stock</span></li>
+                <li>Category: <span>Gaming Laptop</span></li>
+                <li>Shipping Available: <span>All over the India</span></li>
+                <li>Shipping fee: <span>Free</span></li>
+                <li><span>Processor: 12th Gen Intel Core i7-12700H, 14 cores (6 P-cores and 8 E-cores), 2.3 GHz Base Speed, Up to 4.7 GHz Max Turbo Speed, 24MB Cache</span></li>
+                <li><span>Play over 100 high-quality PC games, plus new and upcoming blockbusters on day one like Halo Infinite, Forza Horizon 5, and Age of Empires IV with your new FX507ZM-HF068WS and one month of Game Pass-including EA Play.</span></li>
+                <li><span>With new games added all the time, there’s always something new to play. Age of Empires IV, Back 4 Blood, Battlefield V, Forza Horizon 5, Halo Infinite*, Knockout City, Microsoft Flight Simulator, Minecraft PC Bundle, Need for Speed Heat, Psychonauts2, The Sims 4, Titanfall 2, 12 Minutes
+                </span></li>
+                <li><span>With new games added all the time, there’s always something new to play. Age of Empires IV, Back 4 Blood, Battlefield V, Forza Horizon 5, Halo Infinite*, Knockout City, Microsoft Flight Simulator, Minecraft PC Bundle, Need for Speed Heat, Psychonauts2, The Sims 4, Titanfall 2, 12 Minutes
+                </span></li>
+                <li><span>Graphics: NVIDIA GeForce RTX 3060 GDDR6 6GB VRAM, with MUX Switch + Optimus, 1752MHz* at 140W TGP (1702MHz Boost Clock+50MHz OC, 115W+25W Dynamic Boost)</span></li>
+              <li><span>Display: 15.6-inch, FHD (1920 x 1080) 16:9, anti-glare display, sRGB:100%, Adobe:75.35%, Refresh Rate:300Hz, IPS-level, Adaptive-Sync
+                Operating System: Pre-loaded Windows 11 Home with lifetime validity | Software Included: Pre-loaded Office Home and Student with lifetime validity | McAfee Anti-Virus (1 Years Validity)</span></li>
+              </ul>
+          
+            </div>
+            <div class="purchase-info animate__animated animate__fadeInUp animate__delay-1s">
+              <input type="number" min="0" value="1">
+              <button type="button" class="button">
+                 <i class="fa fa-shopping-cart">Add To Cart</i>
+              </button>
+              <!-- <p style="margin-top: 5px;"> <input type="number" value="6" min="3" max="15"> Select the Size (in UK/Ind)</p> -->
+              <button type="button" class="button1">
+                <span>Buy Now</span>
+              </button>
+            </div>
+            <hr>
+            <div class="product-delivery animate__animated animate__fadeInUp animate__delay-1s">
+              <p>Set Delivery location:<br><i class="fa fa-map-marker"></i>  <input type="text" class="pincode" value="Pin-code"><p>
+            </div>
+            <hr>
+            <div class="social-links animate__animated animate__fadeInUp animate__delay-1s">
+              <h6>Share  At:</h6>
+              <div>
+              <a href="#">
+                <i class="fa fa-twitter animate__animated animate__flip animate__delay-1s  animate__slower 5s animate__infinite"></i>
+              </a>
+              <a href="#">
+                <i class="fa fa-facebook animate__animated animate__flip animate__delay-1s  animate__slower 5s animate__infinite"></i>
+              </a>
+              <a href="#">
+                <i class="fa fa-instagram animate__animated animate__flip animate__delay-1s  animate__slower 5s animate__infinite"></i>
+              </a>
+              <a href="#">
+                <i class="fa fa-skype animate__animated animate__flip animate__delay-1s  animate__slower 5s animate__infinite"></i>
+              </a>
+              <a href="#">
+                <i class="fa fa-whatsapp animate__animated animate__flip animate__delay-1s  animate__slower 5s animate__infinite"></i>
+              </a>
+              </div>
+            </div>
+          </div>
+          </div>
+          <div class="comments comments1">
+            <h3 >Ratings and experiences</h3>
+            <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0" style="height: 300px; overflow-y: scroll;   background-color:rgb(240, 240, 240); ;" >
+              <h4 id="scrollspyHeading14"><i class="fa fa-user-circle"></i><b>Pratham Gupta</b></h4>
+
+              <p><i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half alt"></i>
+                <br>
+               Best Laptop with such amazing specs at such a lower price.
+                <br>
+                15 people found this helpful
+                <br>
+                <a href="#">Report abuse</a>
+          
+              </p>
+              <hr>
+              <h4 id="scrollspyHeading2"><i class="fa fa-user-circle"></i> Samyak Dhyani</h4>
+              <p><i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-empty alt"></i>
+                <br>
+                Pros -
+- Best features in the price point beacsue of newly launched 40RTX series GPU.
+- Intel's 12700H is way better than Ryzen 6800H in terms of performance. That said, Ryzen CPU is more efficient and is a better choice for a laptop.
+- GPU performance is good. MUX switch is great.
+Nitpicks -
+- RGB keypad is of low quality. Not very precise and clear.
+- If you buy from Amazon you get only one year warranty while from Asus site you can get 2 years warranty.
+- Only 2 USB type A ports. One will be occupied by mouse reciever, leaving only one.
+- DDR5 memory is good but instead of giving two 8gb sticks could have given one 16gb. Or could have given DDR4 and lower the price a bit more. Virtually no difference will be there.
+- Also 1TB PCI e 3 memory given instead of PCIe 4 which has double the read write speeds.
+- Also next gen hardware is just around the corner. But these new laptops won't come until the year end in India and they will be much expensive.
+So if you can wait for an year or 2 then don't buy it. If not then go ahead. But try Asus site 1st.
+Overall this is a wierd laptop. Could have saved costs on RAM and added faster SSD.
+
+                <br>
+                67 people found this helpful
+                <br>
+                <a href="#">Report abuse</a>
+          
+              </p>
+              <hr>
+              <h4 id="scrollspyHeading3"><i class="fa fa-user-circle"></i>Mihir sen</h4>
+              <p><i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <br>
+                Very very great product
+                <br>
+                25 people found this helpful
+                <br>
+                <a href="#">Report abuse</a>
+          
+              </p>
+              <hr>
+              <h4 id="scrollspyHeading4"><i class="fa fa-user-circle"></i>Pranjal Sinha</h4>
+              <p><i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-empty alt"></i>
+                <br>
+                It’s absolutely beautiful, my boyfriend loves it. It looks sexy and expensive!! Best buy!😊
+                <br>
+                25 people found this helpful
+                <br>
+                <a href="#">Report abuse</a>
+          
+              </p>
+              <hr>
+              <h4 id="scrollspyHeading5"><i class="fa fa-user-circle">Manas Khatri</i></h4>
+              <!-- <p><i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-empty alt"></i> -->
+                <br>
+                <p><i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star-empty alt"></i>
+                  <br>
+                  Laptop is gud but dial is very big. Bling is also nice. Eye catching. Got for 1,40,000 in lightning deal
+                  <br>
+                  15 people found this helpful
+                  <br>
+                  <a href="#">Report abuse</a>
+            
+                </p>
+              <hr>
+              <a href="#scrollspyHeading14">More Reviews</a>
+            </div>
+          </div>
+          </div>
+          <br>
+          <hr>
+          <br>
+
+
+          <!-- Product 5******************************************************************************************************* -->
+
+          
+
+          <div class="products">
+            <div class="left animate__animated animate__fadeInUp animate__delay-0s">
+        
+
+            <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="false" >
+              <div class="carousel-indicators">
+                <!-- <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1" ></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2" ></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3" ></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4" ></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5" ></button> -->
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="https://github.com/cse1060/E-commerce-Website/blob/main/lv6.jpeg" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <!-- <h5>First slide label</h5>
+                    <p>Some representative placeholder content for the first slide.</p> -->
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="https://github.com/cse1060/E-commerce-Website/blob/main/nj2.jpg?raw=true" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <!-- <h5>Second slide label</h5>
+                    <p>Some representative placeholder content for the second slide.</p> -->
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="https://github.com/cse1060/E-commerce-Website/blob/main/nj6.jpg?raw=true" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <!-- <h5>Third slide label</h5>
+                    <p>Some representative placeholder content for the third slide.</p> -->
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="https://github.com/cse1060/E-commerce-Website/blob/main/nj4.jpg?raw=true" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <!-- <h5>Third slide label</h5>
+                    <p>Some representative placeholder content for the third slide.</p> -->
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="https://github.com/cse1060/E-commerce-Website/blob/main/nj5.jpg?raw=true" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <!-- <h5>Third slide label</h5>
+                    <p>Some representative placeholder content for the third slide.</p> -->
+                  </div>
+                </div>
+              </div>
+              <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button> -->
+            </div>
+            <hr>
+
+            <div class="images">
+            <div class="images1">
+              <img src="https://raw.githubusercontent.com/cse1060/E-commerce-Website/main/lv1.webp">
+            </div>
+            <div class="images2">
+              <img src="https://github.com/cse1060/E-commerce-Website/blob/main/lv2.webp?raw=true">
+            </div>
+            <div class="images3">
+             <img src="https://github.com/cse1060/E-commerce-Website/blob/main/lv3.webp?raw=true">
+            </div>
+            <div class="images4">
+              <img src="https://github.com/cse1060/E-commerce-Website/blob/main/lv4.webp?raw=true">
+            </div>
+            <div class="images5">
+              <img src="https://github.com/cse1060/E-commerce-Website/blob/main/lv5.webp?raw=true">
+            </div>
+            <!-- <div class="images6">
+              <img src="https://rukminim1.flixcart.com/image/128/128/xif0q/shoe/e/3/o/8-dc3728-003nike-9-nike-black-white-iron-grey-original-imag8mz3nmvgmhdd-bb.jpeg?q=70">
+            </div> -->
+            
+            
+
+            </div>
+
+          </div>
+          <div class="right animate__animated animate__fadeInUp animate__delay-0s">
+            <div class="product-content">
+            <h2 class="product-heading animate__animated animate__fadeInUp animate__delay-1s ">Louis Vuitton Belt
+            </h2>
+            <hr>
+            <div class="product-rating animate__animated animate__fadeInUp animate__delay-1s">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half alt"></i>
+              <span><b>4.8(500)</b></span>
+            </div>
+            <div class="product-price animate__animated animate__fadeInUp animate__delay-1s" >
+              <p class="last price">Old Price: <span><b>₹58,000.00</b></span></p>
+              <p class="new price">new Price: <span><b>₹50,000.00</b></span></p>
+            </div>
+            <div class="product-detail animate__animated animate__fadeInUp animate__delay-1s">
+              <h3>About this item: </h3>
+              <p>LV INITIALES 40MM REVERSIBLE BELT<br>
+                The LV Initials 40mm Reversible Belt is a bold new interpretation of the classic LV Initials belt. One side of this piece showcases an embossed Monogram Faded canvas with a worn-in effect. The reverse features a smooth and solid calf leather for a more refined look within this versatile piece.
+
+
+              </p>
+              <ul class="animate__animated animate__fadeInUp animate__delay-1s">
+                <li>Color: <span>Black</span></li>
+                <li>Available: <span>In stock</span></li>
+                <li>Category: <span>Luxury Belts</span></li>
+                <li>Shipping Available: <span>All over the India</span></li>
+                <li>Shipping fee: <span>Free</span></li>
+                <li><span>Width: ~4 cm/1.6 inches</span></li>
+                <li><span>Made in Spain</span></li>
+                <li><span>Monogram Faded canvas front side
+                </span></li>
+                <li><span>Black calf leather reverse side
+
+                </span></li>
+                <li><span>LV Initials buckle</span></li>
+              <!-- li><span>LV Initials buckle</span></l<i> -->
+              </ul>
+          
+            </div>
+            <div class="purchase-info animate__animated animate__fadeInUp animate__delay-1s">
+              <input type="number" min="0" value="1">
+              <button type="button" class="button">
+                 <i class="fa fa-shopping-cart">Add To Cart</i>
+              </button>
+              <!-- <p style="margin-top: 5px;"> <input type="number" value="6" min="3" max="15"> Select the Size (in UK/Ind)</p> -->
+              <button type="button" class="button1">
+                <span>Buy Now</span>
+              </button>
+            </div>
+            <hr>
+            <div class="product-delivery animate__animated animate__fadeInUp animate__delay-1s">
+              <p>Set Delivery location:<br><i class="fa fa-map-marker"></i>  <input type="text" class="pincode" value="Pin-code"><p>
+            </div>
+            <hr>
+            <div class="social-links animate__animated animate__fadeInUp animate__delay-1s">
+              <h6>Share  At:</h6>
+              <div>
+              <a href="#">
+                <i class="fa fa-twitter animate__animated animate__flip animate__delay-1s  animate__slower 5s animate__infinite"></i>
+              </a>
+              <a href="#">
+                <i class="fa fa-facebook animate__animated animate__flip animate__delay-1s  animate__slower 5s animate__infinite"></i>
+              </a>
+              <a href="#">
+                <i class="fa fa-instagram animate__animated animate__flip animate__delay-1s  animate__slower 5s animate__infinite"></i>
+              </a>
+              <a href="#">
+                <i class="fa fa-skype animate__animated animate__flip animate__delay-1s  animate__slower 5s animate__infinite"></i>
+              </a>
+              <a href="#">
+                <i class="fa fa-whatsapp animate__animated animate__flip animate__delay-1s  animate__slower 5s animate__infinite"></i>
+              </a>
+              </div>
+            </div>
+          </div>
+          </div>
+          <div class="comments comments1">
+            <h3 >Ratings and experiences</h3>
+            <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0" style="height: 300px; overflow-y: scroll;   background-color:rgb(240, 240, 240); ;" >
+              <h4 id="scrollspyHeading14"><i class="fa fa-user-circle"></i><b>Pratham Gupta</b></h4>
+
+              <p><i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half alt"></i>
+                <br>
+               High Price but really eye catching.
+                <br>
+                15 people found this helpful
+                <br>
+                <a href="#">Report abuse</a>
+          
+              </p>
+              <hr>
+              <h4 id="scrollspyHeading2"><i class="fa fa-user-circle"></i> Samyak Dhyani</h4>
+              <p><i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-empty alt"></i>
+                <br>
+                Very Good quality leather used.
+
+                <br>
+                67 people found this helpful
+                <br>
+                <a href="#">Report abuse</a>
+          
+              </p>
+              <hr>
+              <h4 id="scrollspyHeading3"><i class="fa fa-user-circle"></i>Mihir sen</h4>
+              <p><i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <br>
+                Very very great product
+                <br>
+                25 people found this helpful
+                <br>
+                <a href="#">Report abuse</a>
+          
+              </p>
+              <hr>
+              <h4 id="scrollspyHeading4"><i class="fa fa-user-circle"></i>Pranjal Sinha</h4>
+              <p><i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-empty alt"></i>
+                <br>
+                It’s absolutely beautiful, my boyfriend loves it. It looks sexy and expensive!! Best buy!😊
+                <br>
+                25 people found this helpful
+                <br>
+                <a href="#">Report abuse</a>
+          
+              </p>
+              <hr>
+              <h4 id="scrollspyHeading5"><i class="fa fa-user-circle">Manas Khatri</i></h4>
+              <!-- <p><i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-empty alt"></i> -->
+                <br>
+                <p><i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star-empty alt"></i>
+                  <br>
+                  Great deal. Grab it as early as possible.
+                  <br>
+                  15 people found this helpful
+                  <br>
+                  <a href="#">Report abuse</a>
+            
+                </p>
+              <hr>
+              <a href="#scrollspyHeading14">More Reviews</a>
+            </div>
+          </div>
+          </div>
+          <br>
+          <hr>
+          <br>
+
+          <!-- FOOTER********************************************************************************** -->
+          <button class="but" type="button"><a href="#">Back To Top</a></button>
+          <footer class="footer">
+            <div class="container">
+             
+              <h2>Shopping Live</h2>
+              <p>© 1996-2023, Shopping_Live.com, Inc. or its affiliates</p>
+             <div class="footer-row">
+               <div class="footer-col footer-col1">
+                 <h4>company</h4>
+                 <ul>
+                   <li><a href="#">about us</a></li>
+                   <li><a href="#">our services</a></li>
+                   <li><a href="#">privacy policy</a></li>
+                   <li><a href="#">affiliate program</a></li>
+                 </ul>
+               </div>
+               <div class="footer-col footer-col2">
+                 <h4>get help</h4>
+                 <ul>
+                   <li><a href="#">FAQ</a></li>
+                   <li><a href="#">shipping</a></li>
+                   <li><a href="#">returns</a></li>
+                   <li><a href="#">order status</a></li>
+                   <li><a href="#">payment options</a></li>
+                 </ul>
+               </div>
+               <div class="footer-col footer-col3">
+                 <h4>online shop</h4>
+                 <ul>
+                   <li><a href="#">watch</a></li>
+                   <li><a href="#">bag</a></li>
+                   <li><a href="#">shoes</a></li>
+                   <li><a href="#">dress</a></li>
+                 </ul>
+               </div>
+               <div class="footer-col footer-col4">
+                 <h4>follow us</h4>
+                 <div class="social-links">
+                   <a href="#"><i class="fa fa-twitter"></i></a>
+                   <a href="#"><i class="fa fa-instagram"></i></a>
+                   <a href="#"><i class="fa fa-facebook-f"></i></a>
+                   <a href="#"><i class="fa fa-linkedin"></i></a>
+                 </div>
+               </div>
+               
+                
+
+             </div>
+             <hr style="color: rgb(255, 119, 0);">
+             <h2 style="text-align: center; color: rgb(255, 132, 0);">Contact Us</h2>
+             <p><br>Mobile No.: <span>1800-XXXX-XXXX</span>
+              <br>Email Id: <span>shoppingLive@gmail.com</span></p>
+            </h4>
+            </div>
+         </footer>
+
+          <script>
+          window.onscroll = function() {myFunction()};
+
+// Get the navbar
+var navbar = document.getElementById("navbar");
+
+// Get the offset position of the navbar
+var sticky = navbar.offsetTop;
+
+// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}  
+          </script>  
+
+        </header>
+    </body>
+
+</html>
